@@ -72,6 +72,11 @@
                 <input type="hidden" name="action" value="delete"/>
                 <button type="submit">DELETE</button>
             </form>
+            <form action="FormateurServlet" method="post">
+                <input type="hidden" name="id" value="<%=formateur.getId()%>"/>
+                <input type="hidden" name="action" value="edit"/>
+                <button type="submit">EDIT</button>
+            </form>
         </td>
     </tr>
     <%}%>

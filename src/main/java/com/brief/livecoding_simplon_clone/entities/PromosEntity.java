@@ -33,6 +33,8 @@ public class PromosEntity {
     }
 
     public Integer getFormateurId() {
+
+        if (formateurId == null) return 0;
         return formateurId;
     }
 

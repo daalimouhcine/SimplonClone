@@ -22,6 +22,20 @@ public class PromoServices {
         }
         return null;
     }
+
+    public List<PromosEntity> getAllNulls() {
+        try {
+            EntityManager em = EntityManagerConfig.getInstance().getEntityManager();
+            em.getTransaction().begin();
+            TypedQuery<PromosEntity> query = em.createQuery("SELECT a FROM PromosEntity a WHERE a.formateurId = null", PromosEntity.class);
+            List<PromosEntity> promoList = query.getResultList();
+            em.getTransaction().commit();
+            return promoList;
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
     public boolean add(PromosEntity promos){
         try {
             EntityManager em = EntityManagerConfig.getInstance().getEntityManager();
@@ -30,6 +44,41 @@ public class PromoServices {
             em.getTransaction().commit();
             return true;
         } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public PromosEntity findById(int id) {
+        try {
+            EntityManager em = EntityManagerConfig.getInstance().getEntityManager();
+            return em.find(PromosEntity.class, id);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public PromosEntity findByFormateurId(int id) {
+        try {
+            EntityManager em = EntityManagerConfig.getInstance().getEntityManager();
+            TypedQuery<PromosEntity> query = em.createQuery("SELECT a FROM PromosEntity a WHERE a.formateurId = " + id, PromosEntity.class);
+            PromosEntity promo = query.getSingleResult();
+            return promo;
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public boolean update(PromosEntity promo) {
+        try {
+            EntityManager em = EntityManagerConfig.getInstance().getEntityManager();
+            em.getTransaction().begin();
+            em.merge(promo);
+            em.getTransaction().commit();
+            return true;
+        } catch(Exception e) {
             System.out.println(e.getMessage());
         }
         return false;
