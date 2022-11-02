@@ -11,5 +11,8 @@
 <a href="hello-servlet">Hello Servlet</a>
 <br>
 <a href="ApprenantServlet">Apprenant</a>
+<br>
+<a href="AdminServlet">Admin</a>
+
 </body>
 </html>
