@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="liveCoding_simplon_clone:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>liveCoding_simplon_clone</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="liveCoding_simplon_clone-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="liveCoding_simplon_clone:war exploded" />
+    </root>
+  </artifact>
+</component>

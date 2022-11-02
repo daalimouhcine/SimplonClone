@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="livecoding_simplon_clone">
+
+        <class>com.brief.livecoding_simplon_clone.entities.AdminEntity</class>
+        <class>com.brief.livecoding_simplon_clone.entities.ApprenantEntity</class>
+        <class>com.brief.livecoding_simplon_clone.entities.BriefEntity</class>
+        <class>com.brief.livecoding_simplon_clone.entities.FormateurEntity</class>
+        <class>com.brief.livecoding_simplon_clone.entities.HibernateSequencesEntity</class>
+        <class>com.brief.livecoding_simplon_clone.entities.PromosEntity</class>
+        <class>com.brief.livecoding_simplon_clone.entities.PromostoapprenantEntity</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/livecoding_simplon_clone"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
