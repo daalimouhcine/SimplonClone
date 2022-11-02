@@ -50,7 +50,7 @@ public class ApprenantServlet extends HttpServlet {
 
         }
 //        doGet(request,response);
-        response.sendRedirect("ApprenantServlet");
+        response.sendRedirect("AdminServlet");
 
     }
 }

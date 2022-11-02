@@ -40,5 +40,79 @@
         <%}%>
     </tbody>
 </table>
+
+<br>
+<br>
+<br>
+
+<h2>Formateurs</h2>
+<h2>
+    <a href="addFormateur.jsp">Add Formateur</a>
+</h2>
+<table>
+    <thead>
+    <td>first name</td>
+    <td>last name</td>
+    <td>email</td>
+    <td>password</td>
+    <td>ACTION</td>
+    </thead>
+    <tbody>
+    <%
+        for(FormateurEntity formateur : formateurList) {
+    %>
+    <tr>
+        <td><%=formateur.getFirstname()%></td>
+        <td><%=formateur.getLastname()%></td>
+        <td><%=formateur.getEmail()%></td>
+        <td><%=formateur.getPassword()%></td>
+        <td>
+            <form action="FormateurServlet" method="post">
+                <input type="hidden" name="id" value="<%=formateur.getId()%>"/>
+                <input type="hidden" name="action" value="delete"/>
+                <button type="submit">DELETE</button>
+            </form>
+        </td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<h2>Apprenants</h2>
+<h2>
+    <a href="addApprenant.jsp">Add Apprenant</a>
+</h2>
+<table>
+    <thead>
+    <td>first name</td>
+    <td>last name</td>
+    <td>email</td>
+    <td>password</td>
+    <td>ACTION</td>
+    </thead>
+    <tbody>
+    <%
+        for(ApprenantEntity apprenant : apprenantList) {
+    %>
+    <tr>
+        <td><%=apprenant.getFirstname()%></td>
+        <td><%=apprenant.getLastname()%></td>
+        <td><%=apprenant.getEmail()%></td>
+        <td><%=apprenant.getPassword()%></td>
+        <td>
+            <form action="ApprenantServlet" method="post">
+                <input type="hidden" name="id" value="<%=apprenant.getId()%>"/>
+                <input type="hidden" name="action" value="delete"/>
+                <button type="submit">DELETE</button>
+            </form>
+        </td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
 </body>
 </html>
