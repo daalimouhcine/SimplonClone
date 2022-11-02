@@ -23,6 +23,9 @@
     <lable for="email">email
         <input type="email" name="email" id="email"/>
     </lable>
+    <lable for="specialiter">Specialiter
+        <input type="text" name="specialiter" id="specialiter"/>
+    </lable>
     <lable for="password">password
         <input type="text" name="password" id="password"/>
     </lable>

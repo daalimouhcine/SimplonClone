@@ -53,10 +53,11 @@
 </h2>
 <table>
     <thead>
-    <td>first name</td>
-    <td>last name</td>
-    <td>email</td>
-    <td>password</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Password</td>
+    <td>Specialiter</td>
     <td>ACTION</td>
     </thead>
     <tbody>
@@ -68,6 +69,7 @@
         <td><%=formateur.getLastname()%></td>
         <td><%=formateur.getEmail()%></td>
         <td><%=formateur.getPassword()%></td>
+        <td><%=formateur.getSpecialiter()%></td>
         <td class="action">
             <form action="FormateurServlet" method="post">
                 <input type="hidden" name="id" value="<%=formateur.getId()%>"/>

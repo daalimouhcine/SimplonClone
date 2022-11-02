@@ -33,6 +33,7 @@ public class FormateurServlet extends HttpServlet {
                     newFormateur.setLastname(request.getParameter("lastname"));
                     newFormateur.setEmail(request.getParameter("email"));
                     newFormateur.setPassword(request.getParameter("password"));
+                    newFormateur.setSpecialiter(request.getParameter("specialiter"));
 
                     FormateurServices formateurServices = new FormateurServices();
                     formateurServices.add(newFormateur);

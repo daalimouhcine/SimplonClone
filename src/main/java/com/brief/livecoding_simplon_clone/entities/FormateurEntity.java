@@ -25,6 +25,9 @@ public class FormateurEntity {
     private String password;
     @OneToMany(mappedBy = "formateurByFormateurId")
     private Collection<PromosEntity> promosById;
+    @Basic
+    @Column
+    private String specialiter;
 
     public int getId() {
         return id;
@@ -64,6 +67,14 @@ public class FormateurEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSpecialiter() {
+        return specialiter;
+    }
+
+    public void setSpecialiter(String specialiter) {
+        this.specialiter = specialiter;
     }
 
     @Override

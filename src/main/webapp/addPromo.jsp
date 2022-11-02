@@ -14,10 +14,10 @@
 </head>
 <body>
     <form action="AdminServlet" method="post">
-        <label for="name">
+        <label for="name">Name
             <input type="text" name="name" id="name" required/>
         </label>
-        <label for="FormateurId">
+        <label for="FormateurId">Formateur Id
             <input type="text" name="formateurId" id="formateurId" value="0"/>
         </label>
         <input type="hidden" name="action" value="addPromo"/>
