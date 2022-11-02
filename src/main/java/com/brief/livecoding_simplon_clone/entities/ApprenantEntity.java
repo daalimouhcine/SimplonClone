@@ -2,6 +2,8 @@ package com.brief.livecoding_simplon_clone.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 @Table(name = "apprenant", schema = "livecoding_simplon_clone", catalog = "")
 public class ApprenantEntity {
@@ -21,6 +23,8 @@ public class ApprenantEntity {
     @Basic
     @Column(name = "password")
     private String password;
+    @ManyToMany(mappedBy = "apprenantsPerPromo")
+    private Collection<PromosEntity> promosByPromoId;
 
     public int getId() {
         return id;
@@ -67,13 +71,13 @@ public class ApprenantEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ApprenantEntity that = (ApprenantEntity) o;
+        ApprenantEntity apprenant = (ApprenantEntity) o;
 
-        if (id != that.id) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (id != apprenant.id) return false;
+        if (firstname != null ? !firstname.equals(apprenant.firstname) : apprenant.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(apprenant.lastname) : apprenant.lastname != null) return false;
+        if (email != null ? !email.equals(apprenant.email) : apprenant.email != null) return false;
+        if (password != null ? !password.equals(apprenant.password) : apprenant.password != null) return false;
 
         return true;
     }
@@ -86,5 +90,25 @@ public class ApprenantEntity {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
+    }
+
+    public Collection<PromosEntity> getPromosByPromoId() {
+        return this.promosByPromoId;
+    }
+
+    public void setPromosByPromoId(Collection<PromosEntity> promosByPromoId) {
+        this.promosByPromoId = promosByPromoId;
+    }
+
+    @Override
+    public String toString() {
+        return "Apprenant{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", promosByPromoId=" + promosByPromoId +
+                '}';
     }
 }

@@ -11,6 +11,8 @@
 <html>
 <head>
     <title>Update Formateur</title>
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
+
 </head>
 <body>
 <%

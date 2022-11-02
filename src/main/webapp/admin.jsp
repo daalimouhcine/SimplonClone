@@ -12,6 +12,8 @@
 <html>
 <head>
     <title>Admin</title>
+    <link rel="stylesheet" href="apprenant.css">
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
 </head>
 <body>
 <%
@@ -66,7 +68,7 @@
         <td><%=formateur.getLastname()%></td>
         <td><%=formateur.getEmail()%></td>
         <td><%=formateur.getPassword()%></td>
-        <td>
+        <td class="action">
             <form action="FormateurServlet" method="post">
                 <input type="hidden" name="id" value="<%=formateur.getId()%>"/>
                 <input type="hidden" name="action" value="delete"/>
@@ -108,11 +110,16 @@
         <td><%=apprenant.getLastname()%></td>
         <td><%=apprenant.getEmail()%></td>
         <td><%=apprenant.getPassword()%></td>
-        <td>
+        <td class="action">
             <form action="ApprenantServlet" method="post">
                 <input type="hidden" name="id" value="<%=apprenant.getId()%>"/>
                 <input type="hidden" name="action" value="delete"/>
                 <button type="submit">DELETE</button>
+            </form>
+            <form action="ApprenantServlet" method="post">
+                <input type="hidden" name="id" value="<%=apprenant.getId()%>"/>
+                <input type="hidden" name="action" value="edit"/>
+                <button type="submit">EDIT</button>
             </form>
         </td>
     </tr>

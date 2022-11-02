@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
+
 </head>
 <body>
 <h1><%= "Hello World!" %>

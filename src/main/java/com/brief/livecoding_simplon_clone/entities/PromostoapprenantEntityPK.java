@@ -10,11 +10,11 @@ import java.io.Serializable;
 public class PromostoapprenantEntityPK implements Serializable {
     @Column(name = "promoId")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int promoId;
     @Column(name = "apprenantId")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int apprenantId;
 
     public int getPromoId() {

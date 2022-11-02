@@ -6,11 +6,11 @@ import jakarta.persistence.*;
 @Table(name = "promostoapprenant", schema = "livecoding_simplon_clone", catalog = "")
 @IdClass(PromostoapprenantEntityPK.class)
 public class PromostoapprenantEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @Id
     @Column(name = "promoId")
     private int promoId;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @Id
     @Column(name = "apprenantId")
     private int apprenantId;

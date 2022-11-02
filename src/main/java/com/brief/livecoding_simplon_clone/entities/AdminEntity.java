@@ -67,13 +67,13 @@ public class AdminEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdminEntity that = (AdminEntity) o;
+        AdminEntity admin = (AdminEntity) o;
 
-        if (id != that.id) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (id != admin.id) return false;
+        if (firstname != null ? !firstname.equals(admin.firstname) : admin.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(admin.lastname) : admin.lastname != null) return false;
+        if (email != null ? !email.equals(admin.email) : admin.email != null) return false;
+        if (password != null ? !password.equals(admin.password) : admin.password != null) return false;
 
         return true;
     }

@@ -44,6 +44,10 @@ public class ApprenantServlet extends HttpServlet {
                     ApprenantService apprenantService = new ApprenantService();
                     apprenantService.deleteById(Integer.parseInt(request.getParameter("id")));
                 }
+                case "edit" -> {
+                    ApprenantServlet apprenantServlet = new ApprenantServlet();
+
+                }
 
 
             }

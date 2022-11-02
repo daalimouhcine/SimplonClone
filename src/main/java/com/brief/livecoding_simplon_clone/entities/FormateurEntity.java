@@ -2,6 +2,8 @@ package com.brief.livecoding_simplon_clone.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 @Table(name = "formateur", schema = "livecoding_simplon_clone", catalog = "")
 public class FormateurEntity {
@@ -21,6 +23,8 @@ public class FormateurEntity {
     @Basic
     @Column(name = "password")
     private String password;
+    @OneToMany(mappedBy = "formateurByFormateurId")
+    private Collection<PromosEntity> promosById;
 
     public int getId() {
         return id;
@@ -67,13 +71,13 @@ public class FormateurEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FormateurEntity that = (FormateurEntity) o;
+        FormateurEntity formateur = (FormateurEntity) o;
 
-        if (id != that.id) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (id != formateur.id) return false;
+        if (firstname != null ? !firstname.equals(formateur.firstname) : formateur.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(formateur.lastname) : formateur.lastname != null) return false;
+        if (email != null ? !email.equals(formateur.email) : formateur.email != null) return false;
+        if (password != null ? !password.equals(formateur.password) : formateur.password != null) return false;
 
         return true;
     }
@@ -86,5 +90,13 @@ public class FormateurEntity {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
+    }
+
+    public Collection<PromosEntity> getPromosById() {
+        return promosById;
+    }
+
+    public void setPromosById(Collection<PromosEntity> promosById) {
+        this.promosById = promosById;
     }
 }

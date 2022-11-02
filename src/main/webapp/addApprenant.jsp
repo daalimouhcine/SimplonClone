@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Add Apprenant</title>
+  <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
+
 </head>
 <body>
 <form action="ApprenantServlet" method="post">

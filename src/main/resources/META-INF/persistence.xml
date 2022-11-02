@@ -9,14 +9,13 @@
         <class>com.brief.livecoding_simplon_clone.entities.ApprenantEntity</class>
         <class>com.brief.livecoding_simplon_clone.entities.BriefEntity</class>
         <class>com.brief.livecoding_simplon_clone.entities.FormateurEntity</class>
-        <class>com.brief.livecoding_simplon_clone.entities.HibernateSequencesEntity</class>
         <class>com.brief.livecoding_simplon_clone.entities.PromosEntity</class>
         <class>com.brief.livecoding_simplon_clone.entities.PromostoapprenantEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/livecoding_simplon_clone"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/livecoding_simplon_clone2"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="show_sql" value="true"/>
         </properties>
     </persistence-unit>

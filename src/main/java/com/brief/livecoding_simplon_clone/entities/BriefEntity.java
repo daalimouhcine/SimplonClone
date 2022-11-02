@@ -15,9 +15,9 @@ public class BriefEntity {
     @Basic
     @Column(name = "description")
     private String description;
-    @Basic
-    @Column(name = "promoId")
-    private int promoId;
+    @ManyToOne
+    @JoinColumn(name = "promoId", referencedColumnName = "id", nullable = false)
+    private PromosEntity promosByPromoId;
 
     public int getId() {
         return id;
@@ -43,25 +43,16 @@ public class BriefEntity {
         this.description = description;
     }
 
-    public int getPromoId() {
-        return promoId;
-    }
-
-    public void setPromoId(int promoId) {
-        this.promoId = promoId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        BriefEntity that = (BriefEntity) o;
+        BriefEntity brief = (BriefEntity) o;
 
-        if (id != that.id) return false;
-        if (promoId != that.promoId) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (id != brief.id) return false;
+        if (name != null ? !name.equals(brief.name) : brief.name != null) return false;
+        if (description != null ? !description.equals(brief.description) : brief.description != null) return false;
 
         return true;
     }
@@ -71,7 +62,14 @@ public class BriefEntity {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + promoId;
         return result;
+    }
+
+    public PromosEntity getPromosByPromoId() {
+        return promosByPromoId;
+    }
+
+    public void setPromosByPromoId(PromosEntity promosByPromoId) {
+        this.promosByPromoId = promosByPromoId;
     }
 }

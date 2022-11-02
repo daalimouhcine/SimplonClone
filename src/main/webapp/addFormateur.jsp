@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Add Formateur</title>
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
+
 </head>
 <body>
 <form action="FormateurServlet" method="post">
