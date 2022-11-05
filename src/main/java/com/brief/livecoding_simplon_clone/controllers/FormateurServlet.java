@@ -59,15 +59,15 @@ public class FormateurServlet extends HttpServlet {
 
                 }
                 case "update" -> {
-                    FormateurEntity newFormateur = new FormateurEntity();
-                    newFormateur.setFirstname(request.getParameter("firstname"));
-                    newFormateur.setLastname(request.getParameter("lastname"));
-                    newFormateur.setEmail(request.getParameter("email"));
-                    newFormateur.setPassword(request.getParameter("password"));
-                    newFormateur.setId(Integer.parseInt(request.getParameter("id")));
+                    FormateurEntity updateFormateur = new FormateurEntity();
+                    updateFormateur.setFirstname(request.getParameter("firstname"));
+                    updateFormateur.setLastname(request.getParameter("lastname"));
+                    updateFormateur.setEmail(request.getParameter("email"));
+                    updateFormateur.setPassword(request.getParameter("password"));
+                    updateFormateur.setId(Integer.parseInt(request.getParameter("id")));
 
                     FormateurServices formateurServices = new FormateurServices();
-                    formateurServices.update(newFormateur);
+                    formateurServices.update(updateFormateur);
 
                     int promoId = Integer.parseInt(request.getParameter("promoId"));
                     if(promoId != 0) {
@@ -75,15 +75,15 @@ public class FormateurServlet extends HttpServlet {
                         PromosEntity promo = promoServices.findById(promoId);
                         if(promo != null) {
                             int oldPromoId = promo.getFormateurId();
-                            if(oldPromoId != newFormateur.getId()) {
-                                PromosEntity promoByFormateur = promoServices.findByFormateurId(newFormateur.getId());
+                            if(oldPromoId != updateFormateur.getId()) {
+                                PromosEntity promoByFormateur = promoServices.findByFormateurId(updateFormateur.getId());
                                 if(promoByFormateur != null) {
                                     promoByFormateur.setFormateurId(null);
                                     promoServices.update(promoByFormateur);
                                 }
 
                             }
-                            promo.setFormateurId(newFormateur.getId());
+                            promo.setFormateurId(updateFormateur.getId());
 
                             promoServices.update(promo);
 

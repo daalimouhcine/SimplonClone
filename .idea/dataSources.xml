@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="livecoding_simplon_clone2@localhost" uuid="e5b90f56-3e13-48a4-a388-651c91c8356c">
+    <data-source source="LOCAL" name="livecoding_simplon_clone/Hibernate" uuid="2afe2c00-521c-44d0-aadb-57d3cee139a9">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/DarkFang/Desktop/liveCoding_simplon_clone/src/main/resources/META-INF/persistence.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/livecoding_simplon_clone2</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
